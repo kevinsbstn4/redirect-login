@@ -1,0 +1,333 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pasien</title>
+  <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/840569fac1.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/840569fac1.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  #body-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #sidebar-container {
+    min-height: 100vh;
+    background-color: #333;
+    padding: 0;
+  }
+
+  .sidebar-expanded {
+    width: 230px;
+  }
+
+  .sidebar-collapsed {
+    width: 60px;
+  }
+
+  #sidebar-container .list-group a {
+    height: 50px;
+    color: white;
+  }
+
+  #sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+  }
+
+  .sidebar-submenu {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-separator-title {
+    background-color: #333;
+    height: 35px;
+  }
+
+  .sidebar-separator {
+    background-color: #333;
+    height: 25px;
+  }
+
+  .logo-separator {
+    background-color: #333;
+    height: 60px;
+  }
+
+  #sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+  }
+
+  #sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+    content: " \f0da";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+  }
+
+  .card-main {
+    width: 80%;
+    margin-top: 50px;
+  }
+
+  .card-body {
+    font-size: 20px;
+  }
+
+  .card-first {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  .tab1 {
+    width: 110%;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <p></p>
+      <span class="menu-collapsed"></span>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown d-sm-block d-md-none">
+          <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+            <a class="dropdown-item" href="#">Dashboard</a>
+            <a class="dropdown-item" href="#">Profile</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row" id="body-row">
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+      <ul class="list-group">
+        <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+          <small>MAIN MENU</small>
+        </li>
+        <a href="http://localhost:8000/index" class="list-group-item list-group-item-action bg-dark text-white">
+          <span style="margin-left: 15px;" class="menu-collapsed">Dashboard</span>
+        </a>
+        <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
+          class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-user fa-fw mr-3"></span>
+            <span class="menu-collapsed">Pasien</span>
+            <span class="submenu-icon ml-auto"></span>
+          </div>
+        </a>
+        <div id="submenu2" class="collapse sidebar-submenu">
+          <a href="danger.html" class="list-group-item list-group-item-action bg-dark text-white">
+            <span class="menu-collapsed">Waspada Corona</span>
+          </a>
+          <a href="http://localhost:5000/pasien" class="list-group-item list-group-item-action bg-dark text-white">
+            <span class="menu-collapsed">Tampilkan Data Pasien</span>
+          </a>
+        </div>
+      </ul>
+    </div>
+
+    <div style="margin-top: 100px;" id="container">
+      <div class="container">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#myModalAdd">Add New</button>
+        <table style="margin-top: 50px;" class="table table-striped" id="mytable">
+          <thead>
+            <tr>
+              <th>No Pasien</th>
+              <th>Nama Pasien</th>
+              <th>Umur</th>
+              <th>Asal RS</th>
+              <th>Status</th>
+              <th>Alamat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each results}}
+            <tr>
+              <td>{{ nis }}</td>
+              <td>{{ nama_pasien }}</td>
+              <td>{{ umur_pasien }}</td>
+              <td>{{ asal_rs }}</td>
+              <td>{{ status }}</td>
+              <td>{{ asal_rumah }}</td>
+              <td>
+                <a href="javascript:void(0);" class="btn btn-sm btn-info edit" data-id="{{ nis }}"
+                  data-nama_pasien="{{ nama_pasien }}" data-umur_pasien="{{ umur_pasien }}" data-asal_rs="{{ asal_rs }}"
+                  data-status="{{ status }}" data-asal_rumah="{{ asal_rumah }}">Edit</a>
+                <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" data-id="{{ nis }}">Delete</a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add New Product Modal-->
+      <form action="/save" method="post">
+        <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Pasien</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <input type="text" name="nama_pasien" class="form-control" placeholder="Nama Pasien">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" name="umur_pasien" class="form-control" placeholder="Umur Pasien">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="asal_rs" class="form-control" placeholder="Asal RS">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="status" class="form-control" placeholder="Status">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="asal_rumah" class="form-control" placeholder="Asal Rumah">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Edit Product Modal-->
+      <form action="/update" method="post">
+        <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Pasien</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <input type="text" name="nama_pasien" class="form-control nama_pasien" placeholder="nama_pasien">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" name="umur_pasien" class="form-control umur_pasien" placeholder="Umur Pasien">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="asal_rs" class="form-control asal_rs" placeholder="Asal RS">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="status" class="form-control status" placeholder="Status">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="asal_rumah" class="form-control asal_rumah" placeholder="Asal Rumah">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="hidden" name="id" class="nis">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Delete Product Modal-->
+      <form id="add-row-form" action="/delete" method="post">
+        <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <strong>Are You Sure To Delete This Data?</strong>
+              </div>
+              <div class="modal-footer">
+                <input type="hidden" name="nis" class="form-control product_id2">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <script src="/assets/js/jquery-3.3.1.js"></script>
+      <script src="/assets/js/bootstrap.js"></script>
+      <script>
+        $(document).ready(function () {
+          //showing data to modal for edit record
+          $('#mytable').on('click', '.edit', function () {
+            var nis = $(this).data('id');
+            var nama_pasien = $(this).data('nama_pasien');
+            var umur_pasien = $(this).data('umur_pasien');
+            var asal_rs = $(this).data('asal_rs');
+            var status = $(this).data('status');
+            var asal_rumah = $(this).data('asal_rumah');
+            $('#EditModal').modal('show');
+            $('.nama_pasien').val(nama_pasien);
+            $('.umur_pasien').val(umur_pasien);
+            $('.asal_rs').val(asal_rs);
+            $('.status').val(status);
+            $('.asal_rumah').val(asal_rumah);
+            $('.nis').val(nis);
+          });
+          //showing modal for delete record
+          $('#mytable').on('click', '.delete', function () {
+            var nis = $(this).data('id');
+            $('#DeleteModal').modal('show');
+            $('.product_id2').val(nis);
+          });
+
+        });
+      </script>
+</body>
+
+</html>
